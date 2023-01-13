@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="col" style="text-align:center">
+        <h1>{{tituloActv14Grupal}}</h1>
+    </div>
+    <br><br>
+    <form class="form-group">
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label>Placa</label>
+                <input type="text" name="placa" class="form-control" id="placa" [(ngModel)]="cuadroPlaca">
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Sede</label>
+                <select class="form-select" name="sede" id="" [(ngModel)]="cuadroSede">
+                    <option value="Trujillo">Trujillo</option>
+                    <option value="Lima">Lima</option>
+                    <option value="Piura">Piura</option>
+                    <option value="Chimbote">Chimbote</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Tipo de unidad</label>
+                <select class="form-control" name="tipoUnidad" id="" [(ngModel)]="cuadroTipoUnidad">
+                    <option value="Monovolumen">Monovolumen</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Cupe">Cupe</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Clase</label>
+                <select class="form-control" name="clase" id="" [(ngModel)]="cuadroClase">
+                    <option value="Auto">Auto</option>
+                    <option value="suv">SUV</option>
+                    <option value="Camioneta">Camioneta</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label>Marca</label>
+                <select class="form-control" name="marca" id="" [(ngModel)]="cuadroMarca">
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="kia">kia</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Modelo</label>
+                <select class="form-control" name="modelo" id="" [(ngModel)]="cuadroModelo">
+                    <option value="Agresico">agresivo</option>
+                    <option value="Future">Future</option>
+                    <option value="Sport">Sport</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Color</label>
+                <select class="form-control" name="color" id="" [(ngModel)]="cuadroColor">
+                    <option value="Negro">Negro</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Dorado">Dorado</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label>Año de fabricacion</label>
+                <input type="text" name="anioFabricacion" class="form-control" id="" [(ngModel)]="cuadroAnio">
+            </div>
+        </div>
+
+        <div class="col" style="text-align:center">
+            <button type="submit" class="btn btn-primary" style="margin-top:33px" (click)="agregarVehiculo()">Agregar</button>
+        </div>
+        <br>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Sede</th>
+                    <th scope="col">Tipo de unidad</th>
+                    <th scope="col">Clase</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Año</th>
+                </tr>
+            </thead>
+        </table>
+        <app-registro-vehiculo-hijo *ngFor="let vehiculo of vehiculos; let i=index" [vehiculoLista]="vehiculo" [indice]="i"></app-registro-vehiculo-hijo>
+    </form>
+</div>
